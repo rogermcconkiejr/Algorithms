@@ -2,8 +2,22 @@
 
 import argparse
 
+test1 = [10, 7, 5, 8, 11, 9]
+
 def find_max_profit(prices):
-  pass
+  max_prof = float('-inf')
+  #Subtract each number on the right. 
+  for i in range(0, len(prices) -1):
+      index = i
+      for j in range(index + 1, len(prices) -1):
+        profit = prices[j] - prices[index]
+        if profit > max_prof:
+            max_prof = profit
+  print(max_prof)
+  return max_prof
+    
+print(len(test1))
+find_max_profit(test1)
 
 
 if __name__ == '__main__':
